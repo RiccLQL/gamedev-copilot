@@ -1,0 +1,5 @@
+wandb
+numpy
+transformers
+datasets
+scrapegraphai
