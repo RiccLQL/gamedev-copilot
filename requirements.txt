@@ -1,11 +1,11 @@
 wandb
-numpy
+numpy==1.26.4
 transformers
 datasets
 python-dotenv
 huggingface_hub
 nbformat
-torch
+torch==2.3.1
 git+https://github.com/huggingface/peft
 unsloth[pip]@git+https://github.com/unslothai/unsloth.git
-bitsandbytes
+https://github.com/bitsandbytes-foundation/bitsandbytes/releases/download/continuous-release_multi-backend-refactor/bitsandbytes-0.44.1.dev0-py3-none-win_amd64.whl

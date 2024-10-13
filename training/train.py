@@ -27,9 +27,6 @@ import wandb
 
 os.environ["WANDB_PROJECT"]="gamedev-copilot"
 
-# save your trained model checkpoint to wandb
-os.environ["WANDB_LOG_MODEL"]="true"
-
 # turn off watch to log faster
 os.environ["WANDB_WATCH"]="false"
 
