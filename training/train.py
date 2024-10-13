@@ -23,6 +23,15 @@ from transformers import (
 from peft import LoraConfig, get_peft_model, prepare_model_for_kbit_training, replace_lora_weights_loftq
 import fim
 
+import wandb
+
+os.environ["WANDB_PROJECT"]="gamdev-copilot"
+
+# save your trained model checkpoint to wandb
+os.environ["WANDB_LOG_MODEL"]="true"
+
+# turn off watch to log faster
+os.environ["WANDB_WATCH"]="false"
 
 # Define and parse arguments.
 @dataclass
