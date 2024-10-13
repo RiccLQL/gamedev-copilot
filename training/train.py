@@ -103,7 +103,7 @@ class ModelArguments:
 @dataclass
 class DataTrainingArguments:
     dataset_name: Optional[str] = field(
-        default="smangrul/hug_stack",
+        default="ricclql/gamedev-copilot-100",
         metadata={"help": "The preference dataset to use."},
     )
     dataset_text_field: str = field(

@@ -26,7 +26,7 @@ CUDA_VISIBLE_DEVICES=0 WANDB_PROJECT=personal-code-copilot python train.py \
 --gradient_accumulation_steps 4 \
 --gradient_checkpointing True \
 --use_reentrant True \
---dataset_text_field "text" \
+--dataset_text_field "content" \
 --test_size 0.1 \
 --fim_rate 0.5 \
 --fim_spm_rate 0.5 \

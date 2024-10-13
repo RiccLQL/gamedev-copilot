@@ -8,3 +8,4 @@ nbformat
 torch
 git+https://github.com/huggingface/peft
 unsloth[pip]@git+https://github.com/unslothai/unsloth.git
+bitsandbytes
