@@ -25,7 +25,7 @@ import fim
 
 import wandb
 
-os.environ["WANDB_PROJECT"]="gamdev-copilot"
+os.environ["WANDB_PROJECT"]="gamedev-copilot"
 
 # save your trained model checkpoint to wandb
 os.environ["WANDB_LOG_MODEL"]="true"
