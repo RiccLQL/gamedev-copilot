@@ -7,6 +7,7 @@ strict: false
 datasets:
   - path: ricclql/gamedev-copilot-2
     type: alpaca
+    field: content
 
 
 dataset_prepared_path:
