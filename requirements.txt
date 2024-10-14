@@ -1,9 +1,8 @@
 git+https://github.com/huggingface/transformers
 git+https://github.com/huggingface/accelerate
 git+https://github.com/huggingface/peft
-git+https://github.com/huggingface/trl
 git+https://github.com/huggingface/datatrove.git
-unsloth[conda]@git+https://github.com/unslothai/unsloth.git
+unsloth[pip]@git+https://github.com/unslothai/unsloth.git
 deepspeed
 PyGithub
 flash-attn
