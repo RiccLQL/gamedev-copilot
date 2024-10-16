@@ -68,4 +68,4 @@ weight_decay:
 fsdp:
 fsdp_config:
 special_tokens:
-  pad_token: "[PAD]"
+  pad_token: <|end_of_text|>
