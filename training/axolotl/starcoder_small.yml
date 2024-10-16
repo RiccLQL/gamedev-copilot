@@ -6,7 +6,7 @@ strict: false
 
 datasets:
   - path: ricclql/gamedev-copilot-2
-    type: ...
+    type: completion
     field: content
 
 

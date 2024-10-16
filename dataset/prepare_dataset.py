@@ -69,10 +69,10 @@ def filter_code_cell(cell) -> bool:
         return True
 
 
-def process_file(directory_name: str, file_path: str) -> Dict[str, str]:
+def process_file(repo_directory: str, directory_name: str, file_path: str) -> Dict[str, str]:
     """Processes a single file."""
     try:
-        with open(file_path, "r", encoding="utf-8") as file:
+        with open(os.path.join(repo_directory, file_path), "r", encoding="utf-8") as file:
             content = file.read()
             if file_path.endswith("ipynb"):
                 # Code courtesy: Chansung Park and Sayak Paul.
@@ -106,20 +106,22 @@ def read_repository_files(directory) -> pd.DataFrame:
 
     # Recursively find all files within the directory
     for root, _, files in os.walk(directory):
-        for file in files:
-            file_path = os.path.join(root, file)
-            if not file_path.endswith(ANTI_FORMATS) and all(
-                k not in file_path for k in [".git", "__pycache__", "xcodeproj"]
-            ):
-                file_paths.append((os.path.dirname(root), file_path))
+        path = root.split(os.path.sep)[1:]
+        if len(path) > 1:
+            root = path[0]
+            for file in files:
+                file_path = os.path.join(os.path.sep.join(path), file)
+                if not file_path.endswith(ANTI_FORMATS) and all(
+                    k not in file_path for k in [".git", "__pycache__", "xcodeproj"]
+                ):
+                    file_paths.append((root, file_path))
 
     # Process files sequentially.
     print(f"Total file paths: {len(file_paths)}.")
     print("Reading file contents...")
 
     for i, (directory_name, file_path) in enumerate(tqdm(file_paths)):
-        file_content = process_file(directory_name, file_path)
-
+        file_content = process_file(repo_directory=REPO_DIRECTORY, directory_name=directory_name, file_path=file_path)
         if file_content["content"] != "":
             temp_df = pd.DataFrame.from_dict([file_content])
             df = pd.concat([df, temp_df])
