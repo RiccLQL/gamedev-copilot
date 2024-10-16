@@ -8,8 +8,8 @@ from huggingface_hub import create_repo, upload_folder
 import tempfile
 import subprocess
 
-REPO_DIRECTORY="repos_sample"
-DATASET_ID="ricclql/gamedev-copilot-2"
+REPO_DIRECTORY="repos"
+DATASET_ID="ricclql/gamedev-copilot-100"
 SERIALIZE_IN_CHUNKS = None
 FEATHER_FORMAT = "ftr"
 
