@@ -1,4 +1,4 @@
-base_model: codellama/CodeLlama-13b-hf
+base_model: codellama/CodeLlama-7b-hf
 model_type: LlamaForCausalLM
 tokenizer_type: CodeLlamaTokenizer
 
@@ -19,7 +19,7 @@ sequence_len: 4096
 sample_packing: true
 pad_to_sequence_len: true
 
-adapter: lora
+adapter: qlora
 lora_model_dir:
 lora_r: 32
 lora_alpha: 16
@@ -33,8 +33,8 @@ wandb_watch:
 wandb_name:
 wandb_log_model:
 
-gradient_accumulation_steps: 4
-micro_batch_size: 2
+gradient_accumulation_steps: 1
+micro_batch_size: 16
 num_epochs: 4
 optimizer: adamw_bnb_8bit
 lr_scheduler: cosine
